@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枪战先锋-硬核射击游戏资讯与战术攻略专题站</title>
+    <meta name="description" content="枪战先锋专题站，提供最新射击游戏动态、武器评测、地图战术、枪械搭配与排位攻略，助你提升枪法与意识，制霸战场。">
+    <meta name="keywords" content="枪战先锋,射击游戏,战术攻略,武器评测,枪械搭配,排位上分,地图点位,身法教学">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+            background: #0b0e14;
+            color: #c8d0e0;
+            line-height: 1.7;
+        }
+        a {
+            color: #e0a100;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #ffd24a;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== 头部 ===== */
+        .site-header {
+            background: #11161f;
+            border-bottom: 3px solid #e0a100;
+            padding: 16px 0;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-area h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .logo-area h1 span {
+            color: #e0a100;
+        }
+        .logo-area p {
+            font-size: 13px;
+            color: #7a8497;
+            margin-top: 2px;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            font-size: 16px;
+            color: #b8c0cf;
+            font-weight: 500;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #fff;
+            border-bottom-color: #e0a100;
+        }
+
+        /* ===== 首屏英雄区 ===== */
+        .hero {
+            background: linear-gradient(135deg, #1c2534 0%, #0b0e14 100%);
+            padding: 64px 0 56px;
+            border-bottom: 1px solid #1f2937;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 380px;
+        }
+        .hero-text .tagline {
+            display: inline-block;
+            background: #e0a100;
+            color: #11161f;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+        .hero-text h2 {
+            font-size: 42px;
+            line-height: 1.2;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 900;
+        }
+        .hero-text h2 span {
+            color: #e0a100;
+        }
+        .hero-text p {
+            font-size: 16px;
+            color: #a8b3c7;
+            margin-bottom: 28px;
+            max-width: 600px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.25s;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: #e0a100;
+            color: #0b0e14;
+        }
+        .btn-primary:hover {
+            background: #ffc42e;
+            color: #0b0e14;
+            box-shadow: 0 0 20px rgba(224, 161, 0, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: #3a4556;
+            color: #c8d0e0;
+        }
+        .btn-outline:hover {
+            border-color: #e0a100;
+            color: #e0a100;
+        }
+        .hero-stats {
+            flex: 0 1 320px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #2a3444;
+            border-radius: 14px;
+            padding: 28px 24px;
+            backdrop-filter: blur(4px);
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #2a3444;
+        }
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+        .stat-label {
+            color: #8d99ad;
+            font-size: 14px;
+        }
+        .stat-value {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .stat-value i {
+            color: #e0a100;
+            font-style: normal;
+            margin-right: 4px;
+        }
+
+        /* ===== 快捷入口 ===== */
+        .quick-links {
+            background: #0f141c;
+            padding: 28px 0;
+            border-bottom: 1px solid #1f2937;
+        }
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        .quick-card {
+            background: #161d29;
+            border-radius: 10px;
+            padding: 16px 12px;
+            text-align: center;
+            border: 1px solid #242f3f;
+            transition: border 0.2s, transform 0.2s;
+        }
+        .quick-card:hover {
+            border-color: #e0a100;
+            transform: translateY(-3px);
+        }
+        .quick-card .icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+        .quick-card h3 {
+            font-size: 15px;
+            color: #e8ecf3;
+            font-weight: 600;
+        }
+        .quick-card p {
+            font-size: 13px;
+            color: #7c879c;
+            margin-top: 4px;
+        }
+
+        /* ===== 内容分区通用 ===== */
+        .section-block {
+            padding: 52px 0;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            border-left: 4px solid #e0a100;
+            padding-left: 16px;
+        }
+        .section-title h2 {
+            font-size: 28px;
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .section-title .more-link {
+            font-size: 14px;
+            color: #e0a100;
+            font-weight: 500;
+        }
+        .section-title .more-link:hover {
+            color: #ffd24a;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #151c28;
+            border: 1px solid #222d3d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .card-thumb {
+            height: 140px;
+            background: #1f2a3a;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #e0a100;
+            background: linear-gradient(145deg, #182334, #0f1620);
+        }
+        .card-thumb .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #e0a100;
+            color: #0b0e14;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+        .card-body {
+            padding: 18px 18px 22px;
+        }
+        .card-body h3 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .card-body p {
+            font-size: 14px;
+            color: #9aa7bd;
+            margin-bottom: 14px;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #6d788d;
+            border-top: 1px solid #243041;
+            padding-top: 12px;
+        }
+        .card-meta .tag {
+            color: #e0a100;
+        }
+
+        /* 特色双栏 */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 32px;
+        }
+        .list-panel {
+            background: #151c28;
+            border: 1px solid #222d3d;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .list-panel h2 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 20px;
+            border-left: 3px solid #e0a100;
+            padding-left: 12px;
+        }
+        .list-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #1e2837;
+        }
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        .list-rank {
+            font-size: 24px;
+            font-weight: 900;
+            color: #3a4a61;
+            width: 40px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .list-item:nth-child(1) .list-rank,
+        .list-item:nth-child(2) .list-rank,
+        .list-item:nth-child(3) .list-rank {
+            color: #e0a100;
+        }
+        .list-content h3 {
+            font-size: 16px;
+            color: #e8ecf3;
+            margin-bottom: 4px;
+        }
+        .list-content p {
+            font-size: 14px;
+            color: #8897ab;
+        }
+        .list-content .meta-line {
+            font-size: 12px;
+            color: #5f6c82;
+            margin-top: 4px;
+        }
+
+        /* 武器评测表 */
+        .table-wrapper {
+            overflow-x: auto;
+            background: #151c28;
+            border-radius: 12px;
+            border: 1px solid #222d3d;
+        }
+        .weapon-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+        .weapon-table th {
+            background: #1e2939;
+            color: #e0a100;
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        .weapon-table td {
+            padding: 14px 16px;
+            border-top: 1px solid #1f2a3a;
+            font-size: 14px;
+            color: #aeb9cc;
+        }
+        .weapon-table tr:hover td {
+            background: #1a2332;
+        }
+        .weapon-name {
+            font-weight: 700;
+            color: #fff;
+        }
+        .rating {
+            color: #e0a100;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 900px;
+        }
+        .faq-item {
+            border: 1px solid #222d3d;
+            background: #151c28;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 20px;
+            font-weight: 600;
+            color: #fff;
+            font-size: 16px;
+            cursor: default;
+            background: #192231;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: "+";
+            font-size: 22px;
+            color: #e0a100;
+            font-weight: 400;
+        }
+        .faq-answer {
+            padding: 0 20px 18px;
+            color: #a5b1c6;
+            font-size: 15px;
+        }
+
+        /* 战术技巧区 */
+        .tip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .tip-box {
+            background: #141b27;
+            border: 1px solid #1f2a3a;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: border 0.2s;
+        }
+        .tip-box:hover {
+            border-color: #e0a100;
+        }
+        .tip-box .tip-icon {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+        .tip-box h3 {
+            font-size: 17px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .tip-box p {
+            font-size: 14px;
+            color: #8e9cb0;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #0a0e14;
+            border-top: 2px solid #1f2937;
+            padding: 40px 0 20px;
+            margin-top: 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 6px;
+        }
+        .footer-col a {
+            color: #7e8aa0;
+            font-size: 14px;
+        }
+        .footer-col a:hover {
+            color: #e0a100;
+        }
+        .copyright {
+            text-align: center;
+            color: #5b6678;
+            font-size: 13px;
+            border-top: 1px solid #1a2330;
+            padding-top: 20px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero .container {
+                flex-direction: column;
+            }
+            .hero-text h2 {
+                font-size: 34px;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .main-nav ul {
+                justify-content: center;
+                gap: 16px;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-text h2 {
+                font-size: 28px;
+            }
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .section-title h2 {
+                font-size: 22px;
+            }
+            .btn-group .btn {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .hero-text .tagline {
+                font-size: 12px;
+            }
+            .card-meta {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 头部导航 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h1>枪战<span>先锋</span></h1>
+                <p>硬核射击 · 战术制胜</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">武器库</a></li>
+                    <li><a href="#">地图点位</a></li>
+                    <li><a href="#">枪械搭配</a></li>
+                    <li><a href="#">排位攻略</a></li>
+                    <li><a href="#">赛事</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏英雄 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <span class="tagline">S12 赛季进行中</span>
+                <h2>掌控<span>枪法</span>与<span>意识</span><br>成为真正的先锋</h2>
+                <p>最新武器平衡调整、身法教学、战术体系与地图控制点位解析。无论你是刚入坑的萌新，还是冲击高段位的突破手，这里都有你需要的实用内容。</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary">查看武器评测</a>
+                    <a href="#" class="btn btn-outline">浏览战术学院</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-label">当前赛季</span>
+                    <span class="stat-value"><i>S12</i> 裂空行动</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">热门模式</span>
+                    <span class="stat-value"><i>爆破</i> / 团队竞技</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">新武器</span>
+                    <span class="stat-value"><i>AK-47</i> 赤焰</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">本周攻略</span>
+                    <span class="stat-value"><i>12</i> 篇更新</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快捷分类入口 -->
+    <div class="quick-links">
+        <div class="container">
+            <div class="quick-grid">
+                <a href="#" class="quick-card">
+                    <div class="icon">🔫</div>
+                    <h3>武器百科</h3>
+                    <p>步枪 · 冲锋枪 · 狙击</p>
+                </a>
+                <a href="#" class="quick-card">
+                    <div class="icon">🗺️</div>
+                    <h3>地图研究</h3>
+                    <p>点位 · 卡位 · 烟雾</p>
+                </a>
+                <a href="#" class="quick-card">
+                    <div class="icon">🎯</div>
+                    <h3>身法教学</h3>
+                    <p>跳射 · 闪身 · 连跳</p>
+                </a>
+                <a href="#" class="quick-card">
+                    <div class="icon">🏆</div>
+                    <h3>排位冲分</h3>
+                    <p>上分思路 · 阵容</p>
+                </a>
+                <a href="#" class="quick-card">
+                    <div class="icon">🛡️</div>
+                    <h3>道具战术</h3>
+                    <p>投掷物 · 技能配合</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 热门内容区 -->
+    <main>
+        <!-- 热门攻略卡片 -->
+        <section class="section-block">
+            <div class="container">
+                <div class="section-title">
+                    <h2>🔥 热门攻略精选</h2>
+                    <a href="#" class="more-link">查看全部攻略 →</a>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-thumb">
+                            <span>🎯</span>
+                            <span class="badge">新手必看</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>枪法入门：从预瞄到压枪</h3>
+                            <p>掌握基础弹道控制与预瞄点位，让你的对枪胜率提升一个台阶。详细拆解各阶段训练方法。</p>
+                            <div class="card-meta">
+                                <span class="tag">教学</span>
+                                <span>阅读 2.4k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">
+                            <span>💣</span>
+                            <span class="badge">进阶</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>爆破模式 A 点进攻战术</h3>
+                            <p>如何利用闪光弹与烟雾弹配合队友完成高效突破？详细解析三种常见进攻节奏与道具搭配。</p>
+                            <div class="card-meta">
+                                <span class="tag">战术</span>
+                                <span>阅读 1.8k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">
+                            <span>🖱️</span>
+                            <span class="badge">灵敏度</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>职业选手灵敏度设置参考</h3>
+                            <p>DPI、游戏内灵敏度、开镜灵敏度如何影响定位？提供多套经典设置供参考并讲解调整思路。</p>
+                            <div class="card-meta">
+                                <span class="tag">设置</span>
+                                <span>阅读 3.1k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">
+                            <span>🗺️</span>
+                            <span class="badge">地图</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>新图「废墟工厂」架枪点位</h3>
+                            <p>废墟工厂的阴人点位与常规对枪路线全整理，帮助你快速熟悉这张热门竞技地图。</p>
+                            <div class="card-meta">
+                                <span class="tag">地图</span>
+                                <span>阅读 1.2k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 双栏：攻略榜单 + 最新资讯 -->
+        <section class="section-block" style="padding-top: 0;">
+            <div class="container">
+                <div class="split-layout">
+                    <!-- 左侧榜单 -->
+                    <div class="list-panel">
+                        <h2>🏅 本周上分英雄榜</h2>
+                        <div class="list-item">
+                            <div class="list-rank">1</div>
+                            <div class="list-content">
+                                <h3>爆破模式突破手思路</h3>
+                                <p>如何在开局30秒内撕开防守缺口？三位高分段玩家分享实战心得。</p>
+                                <div class="meta-line">热度 98 · 更新于2小时前</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-rank">2</div>
+                            <div class="list-content">
+                                <h3>狙击枪甩枪与瞬狙训练法</h3>
+                                <p>从反应速度到肌肉记忆，科学的训练计划让你快速掌握甩狙技巧。</p>
+                                <div class="meta-line">热度 87 · 更新于5小时前</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-rank">3</div>
+                            <div class="list-content">
+                                <h3>如何选择适合自己的主武器</h3>
+                                <p>根据打法风格选择武器：架点型、突破型还是自由人？一篇帮你理清思路。</p>
+                                <div class="meta-line">热度 76 · 更新于8小时前</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-rank">4</div>
+                            <div class="list-content">
+                                <h3>排位BP阶段队友沟通技巧</h3>
+                                <p>禁用地图与角色选择时的有效沟通，能显著提升队伍胜率。</p>
+                                <div class="meta-line">热度 65 · 更新于昨天</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-rank">5</div>
+                            <div class="list-content">
+                                <h3>残局1vN处理思路与心理博弈</h3>
+                                <p>冷静判断对手位置，利用声音与时间差完成极限翻盘。</p>
+                                <div class="meta-line">热度 54 · 更新于2天前</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧最新资讯 -->
+                    <div class="list-panel">
+                        <h2>📰 最新战报与资讯</h2>
+                        <div class="list-item">
+                            <div class="list-content">
+                                <h3>先锋杯春季赛四强诞生</h3>
+                                <p>经过三周激烈角逐，四支战队晋级线下总决赛。</p>
+                                <div class="meta-line">赛事 · 1小时前</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-content">
+                                <h3>新版本「裂空行动」更新公告</h3>
+                                <p>多款武器数值微调，新增投掷物机制与两张竞技地图。</p>
+                                <div class="meta-line">版本 · 3小时前</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-content">
+                                <h3>主播水友赛报名开启</h3>
+                                <p>本周六晚，知名主播与你同场竞技，报名即有机会获得限定皮肤。</p>
+                                <div class="meta-line">活动 · 5小时前</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-content">
+                                <h3>枪械手感优化计划公布</h3>
+                                <p>开发团队透露后续将针对后坐力表现进行专项优化。</p>
+                                <div class="meta-line">官方 · 昨天</div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-content">
+                                <h3>社区创作大赛：枪械涂装设计</h3>
+                                <p>发挥创意设计专属涂装，优秀作品将有机会加入游戏。</p>
+                                <div class="meta-line">社区 · 2天前</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 武器评测表格 -->
+        <section class="section-block" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>🔧 热门武器评测</h2>
+                    <a href="#" class="more-link">完整武器库 →</a>
+                </div>
+                <div class="table-wrapper">
+                    <table class="weapon-table">
+                        <thead>
+                            <tr>
+                                <th>武器</th>
+                                <th>类型</th>
+                                <th>伤害</th>
+                                <th>射速</th>
+                                <th>控制难度</th>
+                                <th>综合评级</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="weapon-name">AK-47 赤焰</td>
+                                <td>步枪</td>
+                                <td>★★★★☆</td>
+                                <td>中</td>
+                                <td>高</td>
+                                <td><span class="rating">S</span></td>
+                            </tr>
+                            <tr>
+                                <td class="weapon-name">M4A1 幻影</td>
+                                <td>步枪</td>
+                                <td>★★★★☆</td>
+                                <td>中高</td>
+                                <td>中</td>
+                                <td><span class="rating">A</span></td>
+                            </tr>
+                            <tr>
+                                <td class="weapon-name">Vector 疾风</td>
+                                <td>冲锋枪</td>
+                                <td>★★★☆☆</td>
+                                <td>极高</td>
+                                <td>中</td>
+                                <td><span class="rating">A-</span></td>
+                            </tr>
+                            <tr>
+                                <td class="weapon-name">AWP 猎鹰</td>
+                                <td>狙击枪</td>
+                                <td>★★★★★</td>
+                                <td>极低</td>
+                                <td>极高</td>
+                                <td><span class="rating">S</span></td>
+                            </tr>
+                            <tr>
+                                <td class="weapon-name">SCAR 重击</td>
+                                <td>步枪</td>
+                                <td>★★★★☆</td>
+                                <td>中</td>
+                                <td>中高</td>
+                                <td><span class="rating">B+</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 战术技巧区 -->
+        <section class="section-block" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>💡 进阶技巧速览</h2>
+                    <a href="#" class="more-link">更多技巧 →</a>
+                </div>
+                <div class="tip-grid">
+                    <div class="tip-box">
+                        <div class="tip-icon">🏃</div>
+                        <h3>急停射击</h3>
+                        <p>移动中急停能极大提高准度，是步枪对枪的核心基本功。</p>
+                    </div>
+                    <div class="tip-box">
+                        <div class="tip-icon">🎭</div>
+                        <h3>身位控制</h3>
+                        <p>利用小身位骗枪，再拉出完成击杀，高手必修课。</p>
+                    </div>
+                    <div class="tip-box">
+                        <div class="tip-icon">📢</div>
+                        <h3>声音定位</h3>
+                        <p>通过脚步与枪声判断敌人位置，提前架枪取得优势。</p>
+                    </div>
+                    <div class="tip-box">
+                        <div class="tip-icon">💊</div>
+                        <h3>道具组合</h3>
+                        <p>闪光+烟雾的经典组合，能够有效瓦解对手防守站位。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ部分 -->
+        <section class="section-block" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>❓ 新手常见问题</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">刚开始玩枪战先锋，应该先练什么？</div>
+                        <div class="faq-answer">建议先从基础枪法入手，包括预瞄、压枪和急停。每天花20分钟在训练场练习弹道控制，再逐步接触爆破模式的点位与道具。同时可以浏览站内的新手教学专区，系统学习。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何选择第一把适合的步枪？</div>
+                        <div class="faq-answer">M4A1系列通常后坐力较小，适合新手建立手感；AK系列威力大但控制难度高。建议先用M4A1熟悉游戏节奏，等压枪稳定后再尝试AK。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏内灵敏度怎么调才合适？</div>
+                        <div class="faq-answer">没有绝对正确的数值，但多数玩家的eDPI（DPI×游戏灵敏度）在800-1600之间。可以从一个基础值开始，在训练场中测试跟枪与甩枪的舒适度，微调至自己最顺手。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">排位赛总是输，如何提升胜率？</div>
+                        <div class="faq-answer">除了枪法，更要注意团队配合与道具使用。多与队友沟通战术，学习几张常用地图的攻防思路。另外，保持良好心态，避免心态崩溃导致操作变形。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>枪战先锋专题</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">友情链接</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容分类</h4>
+                    <ul>
+                        <li><a href="#">武器评测</a></li>
+                        <li><a href="#">地图战术</a></li>
+                        <li><a href="#">身法教学</a></li>
+                        <li><a href="#">赛事资讯</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>常用工具</h4>
+                    <ul>
+                        <li><a href="#">灵敏度计算器</a></li>
+                        <li><a href="#">弹道参考图</a></li>
+                        <li><a href="#">地图点位查询</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 枪战先锋专题站  |  本页面仅供学习交流使用  |  部分数据来源于玩家社区</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
