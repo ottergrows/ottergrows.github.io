@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新黑暗圣经-黑暗美学文化专题站 · 深渊叙事与神秘主义图鉴</title>
+    <meta name="description" content="新黑暗圣经专题，探究暗黑美学、神秘符号、禁忌仪式与深渊叙事，收录多元黑暗风格作品解析与神秘主义文化档案。">
+    <meta name="keywords" content="新黑暗圣经,黑暗美学,神秘主义,暗黑艺术,禁忌文学,哥特文化,深渊叙事,黑弥撒,神秘符号">
+    <link rel="stylesheet" href="data:text/css,">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cinzel', 'Times New Roman', 'Noto Serif SC', 'Songti SC', serif;
+            background: #0b0a0d;
+            color: #c8bda8;
+            line-height: 1.6;
+            background-image: radial-gradient(ellipse at 20% 10%, #1a151f 0%, #0b0a0d 70%);
+            min-height: 100vh;
+        }
+        .wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* 装饰性背景纹理 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><circle cx="4" cy="4" r="1.2" fill="%23ffffff" opacity="0.03"/><path d="M20 20 L25 25 L20 30 L15 25 Z" fill="none" stroke="%23b8a88a" stroke-width="0.4" opacity="0.04"/></svg>');
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* 头部 */
+        .header {
+            border-bottom: 1px solid rgba(180, 160, 130, 0.2);
+            padding: 20px 0 14px;
+            background: rgba(8, 6, 10, 0.7);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-sigil {
+            font-size: 30px;
+            color: #a08b6c;
+            text-shadow: 0 0 12px rgba(150, 120, 70, 0.5);
+            letter-spacing: 2px;
+            transform: rotate(-8deg);
+            display: inline-block;
+        }
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #dacbb4;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        .site-name small {
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            color: #7a6a55;
+            font-family: 'Courier New', monospace;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #9b8b76;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s, border 0.2s;
+            padding: 6px 2px;
+            border-bottom: 1px solid transparent;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .nav-links a:hover {
+            color: #e5d5bc;
+            border-bottom-color: #a08b6c;
+        }
+        /* 主视觉 hero */
+        .hero {
+            padding: 70px 0 80px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 10px;
+            color: #e2d4c0;
+            text-shadow: 0 0 25px rgba(180, 140, 100, 0.3);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #8d7b64;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto 30px;
+            color: #b3a48f;
+            font-size: 1.05rem;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .hero-ornament {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            font-size: 20px;
+            color: #6b5d4a;
+            margin-top: 10px;
+        }
+        .hero-ornament span {
+            opacity: 0.6;
+        }
+        .btn-ritual {
+            display: inline-block;
+            border: 1px solid #8b7a62;
+            padding: 12px 40px;
+            color: #d4c3a9;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: all 0.4s ease;
+            background: transparent;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .btn-ritual:hover {
+            background: #2a211c;
+            border-color: #b89b74;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(120, 90, 60, 0.2);
+        }
+        /* 专题卡片 */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 6px;
+            margin: 50px 0 20px;
+            color: #cbbda5;
+            position: relative;
+        }
+        .section-title::after {
+            content: '◆◇◆';
+            display: block;
+            font-size: 14px;
+            letter-spacing: 14px;
+            color: #7b6a53;
+            margin-top: 6px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+            margin: 40px 0;
+        }
+        .card {
+            background: linear-gradient(145deg, #131016 0%, #0d0b10 100%);
+            border: 1px solid #2a231e;
+            padding: 22px 22px 18px;
+            transition: transform 0.3s ease, border-color 0.3s;
+            border-radius: 2px;
+            position: relative;
+        }
+        .card:hover {
+            border-color: #7c6a50;
+            transform: translateY(-6px);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #d3c3ab;
+            border-left: 3px solid #6b5a41;
+            padding-left: 12px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #9e907c;
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 12px;
+        }
+        .card .meta {
+            font-size: 0.75rem;
+            color: #5f5342;
+            letter-spacing: 1px;
+            border-top: 1px dashed #2f2a24;
+            padding-top: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 章节双栏 */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        .content-block {
+            background: rgba(18, 15, 20, 0.6);
+            padding: 30px;
+            border: 1px solid #2c2520;
+        }
+        .content-block h2 {
+            font-size: 1.5rem;
+            color: #cbbda5;
+            margin-bottom: 18px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .content-block p {
+            margin-bottom: 14px;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.95rem;
+            color: #ab9c87;
+        }
+        .content-block ul {
+            margin-left: 20px;
+            list-style-type: none;
+        }
+        .content-block li {
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+        }
+        .content-block li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #8b7a62;
+            font-size: 0.7rem;
+            top: 4px;
+        }
+        /* 符号展示 */
+        .symbols {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 0;
+        }
+        .symbol-item {
+            text-align: center;
+            width: 110px;
+            padding: 18px 8px;
+            border: 1px solid #33291f;
+            background: #0f0d11;
+            transition: all 0.3s;
+        }
+        .symbol-item:hover {
+            border-color: #8a7557;
+            background: #161318;
+        }
+        .symbol-item .glyph {
+            font-size: 34px;
+            display: block;
+            color: #a68e6d;
+            margin-bottom: 8px;
+            text-shadow: 0 0 12px rgba(160, 130, 90, 0.4);
+        }
+        .symbol-item .name {
+            font-size: 0.8rem;
+            color: #9b8b76;
+            letter-spacing: 1px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        /* 文本样式 */
+        .quote-block {
+            border-left: 2px solid #6e5b41;
+            padding: 20px 30px;
+            margin: 40px 10px;
+            background: rgba(24, 20, 26, 0.5);
+            font-style: italic;
+            color: #b8a890;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+        }
+        /* faq */
+        .faq-list {
+            margin: 20px 0 40px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #2a231e;
+            padding: 18px 0;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #d4c3a9;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-family: 'Noto Serif SC', serif;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.8rem;
+            color: #7b6a53;
+            transition: transform 0.3s;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+        .faq-item .answer {
+            padding-top: 12px;
+            color: #9e907c;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        /* 页脚 */
+        .footer {
+            border-top: 1px solid #1f1b18;
+            padding: 30px 0 50px;
+            margin-top: 60px;
+            text-align: center;
+            color: #5d5345;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .footer .sigil {
+            font-size: 20px;
+            letter-spacing: 12px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: #7a6a55;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        /* 响应式 */
+        @media (max-width: 800px) {
+            .hero h1 { font-size: 2.2rem; letter-spacing: 6px; }
+            .two-col { grid-template-columns: 1fr; }
+            .nav-links { gap: 12px; justify-content: center; margin-top: 12px; }
+            .header-inner { flex-direction: column; }
+            .card-grid { grid-template-columns: 1fr; }
+            .site-name { font-size: 1.4rem; }
+        }
+        @media (max-width: 480px) {
+            .wrapper { padding: 0 16px; }
+            .hero { padding: 40px 0 50px; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 广告脚本占位 (按要求插入在head中) -->
+    <div class="wrapper">
+        <!-- 页眉 -->
+        <header class="header">
+            <div class="header-inner wrapper" style="max-width:100%; padding:0;">
+                <div class="logo-area">
+                    <span class="logo-sigil">☩</span>
+                    <div class="site-name">
+                        新黑暗圣经
+                        <small>CODEX TENEBRARUM</small>
+                    </div>
+                </div>
+                <nav aria-label="主导航">
+                    <ul class="nav-links">
+                        <li><a href="#">深渊档案</a></li>
+                        <li><a href="#">神秘符号</a></li>
+                        <li><a href="#">禁忌文学</a></li>
+                        <li><a href="#">暗黑艺术</a></li>
+                        <li><a href="#">仪式考据</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 主视觉 -->
+        <section class="hero">
+            <h1>新黑暗圣经</h1>
+            <div class="sub">深渊中窥见真理 · 黑暗中寻找光明</div>
+            <p>一部关于黑暗美学与神秘主义的现代启示录，探索隐匿于文明边缘的符号、叙事与哲思。我们以严谨的考据和开放的想象力，重新梳理那些被主流话语遮蔽的暗黑文化脉络。</p>
+            <div class="hero-ornament">
+                <span>✧</span><span>✦</span><span>✧</span><span>✦</span><span>✧</span>
+            </div>
+            <a href="#explore" class="btn-ritual">进入深渊</a>
+        </section>
+
+        <!-- 卡片区 -->
+        <section id="explore" style="margin-top:20px;">
+            <h2 class="section-title">核心主题</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>深渊叙事</h3>
+                    <p>从洛夫克拉夫特的克苏鲁神话到当代黑暗幻想文学，探讨人类对未知的恐惧与迷恋。我们分析那些描绘不可名状之物的作品，如何映射集体潜意识的阴影。</p>
+                    <div class="meta">
+                        <span>📖 12篇文章</span>
+                        <span>更新于近日</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>神秘符号</h3>
+                    <p>所罗门之印、卡巴拉树、炼金术图标……这些流传千年的符号承载着怎样的意义？我们解读它们在不同秘传传统中的位置和现代误读。</p>
+                    <div class="meta">
+                        <span>✡ 28个符号</span>
+                        <span>图文档案</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>禁忌仪式</h3>
+                    <p>历史文献中的黑弥撒、召唤仪式与民间巫术，我们以人类学视角还原其社会背景和心理功能，不带猎奇，只重考据。</p>
+                    <div class="meta">
+                        <span>🕯 考据专文</span>
+                        <span>谨慎阅读</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>暗黑美学</h3>
+                    <p>哥特式建筑、暗黑绘画、工业音乐……黑暗美学如何从边缘亚文化走向主流视野？我们追踪其演变与跨界融合。</p>
+                    <div class="meta">
+                        <span>🎨 视觉研究</span>
+                        <span>多图预警</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 双栏内容 -->
+        <div class="two-col">
+            <div class="content-block">
+                <h2>什么是「新黑暗圣经」？</h2>
+                <p>它不是一本真实的古代典籍，而是一种现代文化现象——泛指那些以黑暗、神秘、禁忌为主题的创作集合。从网络文学到独立电影，从另类音乐到先锋艺术，创作者们借用宗教隐喻和神秘学元素，构建出令人着迷的暗黑宇宙。</p>
+                <p>我们试图以文献学的方式梳理这些作品，区分虚构与真实历史，为爱好者提供一份可靠的向导。</p>
+            </div>
+            <div class="content-block">
+                <h2>研究路径</h2>
+                <ul>
+                    <li>历史文献：中世纪魔法书、审判记录</li>
+                    <li>文艺作品：小说、电影、游戏中的暗黑元素</li>
+                    <li>田野调查：现代亚文化群体的仪式实践</li>
+                    <li>图像学分析：从勃鲁盖尔到现代暗黑插画</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 符号展示 -->
+        <h2 class="section-title">神秘符号图鉴</h2>
+        <div class="symbols">
+            <div class="symbol-item">
+                <span class="glyph">☉</span>
+                <span class="name">太阳黑化</span>
+            </div>
+            <div class="symbol-item">
+                <span class="glyph">☽</span>
+                <span class="name">暗月</span>
+            </div>
+            <div class="symbol-item">
+                <span class="glyph">♆</span>
+                <span class="name">海王星</span>
+            </div>
+            <div class="symbol-item">
+                <span class="glyph">✠</span>
+                <span class="name">十字变体</span>
+            </div>
+            <div class="symbol-item">
+                <span class="glyph">⌬</span>
+                <span class="name">苯环</span>
+            </div>
+            <div class="symbol-item">
+                <span class="glyph">🜍</span>
+                <span class="name">硫磺</span>
+            </div>
+        </div>
+
+        <!-- 引文 -->
+        <div class="quote-block">
+            “黑暗并非光的缺席，而是另一种显现——当我们凝视深渊时，深渊也在整理我们的档案。”
+        </div>
+
+        <!-- 双栏 -->
+        <div class="two-col">
+            <div class="content-block">
+                <h2>现代暗黑作品推荐</h2>
+                <p>从《湮灭》到《异形》，从《暗黑》剧集到《血源诅咒》游戏，这些作品并非宣扬邪恶，而是通过黑暗隐喻探讨存在、熵与人性边界。我们梳理了值得深入研究的代表作。</p>
+                <p>推荐原则：注重氛围营造与哲学思辨，拒绝无意义的血腥。</p>
+            </div>
+            <div class="content-block">
+                <h2>安全须知</h2>
+                <p>研究神秘主义与暗黑文化时，请保持理性与批判性思维。本网站所有内容均为文化探讨，不提供任何实际操作指导，也不鼓励参与危险行为。</p>
+                <p>如感到心理不适，请暂停阅读并寻求专业帮助。</p>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="section-title">常见疑问</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>新黑暗圣经是真实存在的古籍吗？</summary>
+                <div class="answer">不是。它更多是一种象征性的说法，用于描述一系列虚构作品或网络创作中的暗黑设定集。目前并无任何历史文献自称“新黑暗圣经”。我们建议以文化研究的角度看待。</div>
+            </details>
+            <details class="faq-item">
+                <summary>黑暗美学与邪教有区别吗？</summary>
+                <div class="answer">有本质区别。黑暗美学属于艺术与思想表达范畴，不涉及具体崇拜或危害行为；而邪教具有控制性和伤害性。我们坚决反对任何形式的极端主义。</div>
+            </details>
+            <details class="faq-item">
+                <summary>如何开始了解神秘学？</summary>
+                <div class="answer">建议从学术著作入手，如伊利亚德的《神圣与世俗》，或叶芝的《幻象》。避免直接接触带有功利性的“魔法书”。可关注我们后续推出的入门书单。</div>
+            </details>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="sigil">☩ ✦ ☩ ✦ ☩</div>
+            <p>新黑暗圣经 · 文化研究档案 · 仅供学术与艺术探讨</p>
+            <p>建议理性阅读 · 保持独立思考 · 尊重多元文化</p>
+            <p style="margin-top:10px; font-size:0.7rem;">© 2025 暗黑档案室 · 虚构作品索引</p>
+        </footer>
+    </div>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
